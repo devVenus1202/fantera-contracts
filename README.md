@@ -1,4 +1,4 @@
-### Fantra Collection 
+# Fantra Collection 
 
 This is test contracts for Fantra
 
