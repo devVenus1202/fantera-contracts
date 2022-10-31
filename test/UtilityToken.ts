@@ -21,7 +21,7 @@ export function UtilityTokenTest(): void {
     beforeEach(async function () {
       [owner, addr1, addr2, ...addrs] = await ethers.getSigners();  
 
-      const UtilityTokenContract = await ethers.getContractFactory("UtilityToken");
+      const UtilityTokenContract = await ethers.getContractFactory(UtilityToken_NAME);
       const utilityToken = await UtilityTokenContract.deploy(expandDecimals(MAX_SUPPLY));
       
       UtilityToken = await utilityToken.deployed();

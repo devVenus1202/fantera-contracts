@@ -7,6 +7,7 @@ import {
 } from "../scripts/helper";
 
 const COLLECTION_NAME = "FanteraCollection";
+const UTILITYTOKEN_NAME = "FanteraToken";
 const COLLECTION_SYMBOL = "FANTC";
 const TEST_URI = "https://gateway.pinata.cloud/ipfs/QmZ4bHZbhsiu5uzbgom7PVueQo16uDeQFQMEfpaxuJeRVu?filename=0000000000000000000000000000000000000000000000000000000000000001.json";
 
@@ -23,7 +24,7 @@ export function CollectionTest(): void {
     beforeEach(async function () {      
       [owner, addr1, addr2, addr3, ...addrs] = await ethers.getSigners();
 
-      const UtilityTokenContract = await ethers.getContractFactory("FanteraToken");
+      const UtilityTokenContract = await ethers.getContractFactory(UTILITYTOKEN_NAME);
       const utilityToken = await UtilityTokenContract.deploy(expandDecimals(0));
       
       UtilityToken = await utilityToken.deployed();      

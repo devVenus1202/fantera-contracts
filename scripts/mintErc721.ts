@@ -5,9 +5,9 @@ import { expandDecimals, waitForTx } from "./helper";
 dotenv.config();
 
 const CollectionContract = require("../artifacts/contracts/FanteraCollection.sol/FanteraCollection.json");
-const collectionAddress = "0xe66526b89EBeD1dfE1B9421Fa86E2faf27c9fa98";
+const collectionAddress = "0xe3039F6DE1ee7BefF11F149B5887b1bf6b607a97";
 const UtilityContract = require("../artifacts/contracts/FanteraToken.sol/FanteraToken.json");
-const utilityAddress = "0x704722A46b0BC205Ac243b632690C1fa8cA7B1eA";
+const utilityAddress = "0xfE80eaD411bd6aC38489Bf60Aa212009Bdd3F118";
 const tokenId = 0;
 const amount : number = 500;
 
