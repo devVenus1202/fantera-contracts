@@ -6,7 +6,7 @@ import {
     expandDecimals
 } from "../scripts/helper";
 
-const COLLECTION_NAME = "FantraCollection";
+const COLLECTION_NAME = "FanteraCollection";
 const COLLECTION_SYMBOL = "FANTC";
 const TEST_URI = "https://gateway.pinata.cloud/ipfs/QmZ4bHZbhsiu5uzbgom7PVueQo16uDeQFQMEfpaxuJeRVu?filename=0000000000000000000000000000000000000000000000000000000000000001.json";
 
@@ -23,13 +23,13 @@ export function CollectionTest(): void {
     beforeEach(async function () {      
       [owner, addr1, addr2, addr3, ...addrs] = await ethers.getSigners();
 
-      const UtilityTokenContract = await ethers.getContractFactory("FantraToken");
+      const UtilityTokenContract = await ethers.getContractFactory("FanteraToken");
       const utilityToken = await UtilityTokenContract.deploy(expandDecimals(0));
       
       UtilityToken = await utilityToken.deployed();      
 
       const CollectionContract = await ethers.getContractFactory(
-        "FantraCollection"
+        "FanteraCollection"
       );
       const collection = await CollectionContract.deploy(UtilityToken.address);
 

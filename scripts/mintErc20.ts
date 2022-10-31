@@ -4,7 +4,7 @@ import { expandDecimals, waitForTx } from "./helper";
 
 dotenv.config();
 
-const UtilityContract = require("../artifacts/contracts/FantraToken.sol/FantraToken.json");
+const UtilityContract = require("../artifacts/contracts/FanteraToken.sol/FanteraToken.json");
 const utilityContract = "0x704722A46b0BC205Ac243b632690C1fa8cA7B1eA";
 
 const amount: number = 1000;

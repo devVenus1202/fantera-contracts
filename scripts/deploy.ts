@@ -7,15 +7,15 @@ async function main() {
 
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
-  const UtilityToken = await ethers.getContractFactory("FantraToken");
+  const UtilityToken = await ethers.getContractFactory("FanteraToken");
   const token = await UtilityToken.deploy(0);
 
-  console.log("FantraToken is deployed -> address: ", token.address);
+  console.log("FanteraToken is deployed -> address: ", token.address);
 
-  const Collection = await ethers.getContractFactory("FantraCollection");
+  const Collection = await ethers.getContractFactory("FanteraCollection");
   const collection = await Collection.deploy(token.address);
 
-  console.log("FantraCollection is deployed -> address: ", collection.address);
+  console.log("FanteraCollection is deployed -> address: ", collection.address);
 }
 
 main()

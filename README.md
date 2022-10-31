@@ -1,6 +1,6 @@
-# Fantra Collection 
+# Fantera Collection 
 
-This is test contracts for Fantra
+This is test contracts for Fantera
 
 ## Before starting
 Create `.env` file and fill the values from `.env.example`.

@@ -3,11 +3,11 @@ pragma solidity ^0.8.0;
 
 import "./lib/ERC20.sol";
 
-contract FantraToken is ERC20 {
+contract FanteraToken is ERC20 {
 
     uint256 maxSupply;    
 
-    constructor(uint256 _maxSupply) ERC20("FantraToken", "FANT") {        
+    constructor(uint256 _maxSupply) ERC20("FanteraToken", "FANT") {        
         maxSupply = _maxSupply != 0 ? _maxSupply : type(uint256).max; 
     }
 

@@ -7,7 +7,7 @@ import {
 import { expect } from "chai";
 
 const MAX_SUPPLY = 100000;
-const UtilityToken_NAME = "FantraToken";
+const UtilityToken_NAME = "FanteraToken";
 const UtilityToken_SYMBOL= "FANT";
 
 export function UtilityTokenTest(): void {

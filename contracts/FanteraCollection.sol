@@ -5,17 +5,17 @@ import "./lib/ERC721.sol";
 import "./lib/ERC721Enumerable.sol";
 import "./lib/ERC721URIStorage.sol";
 import "./lib/Ownable.sol";
-import "./FantraToken.sol";
+import "./FanteraToken.sol";
 
-contract FantraCollection is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
-    FantraToken private token;
+contract FanteraCollection is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
+    FanteraToken private token;
     uint256 public depositAmt;
 
     event Claimed(address to, uint256 amount);
     event Minted(address to, uint256 tokenId, string uri, uint256 amount);
     
 
-    constructor(FantraToken _token) ERC721("FantraCollection", "FANTC") {
+    constructor(FanteraToken _token) ERC721("FanteraCollection", "FANTC") {
         token = _token;
     }
 
