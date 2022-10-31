@@ -2,12 +2,13 @@
 pragma solidity ^0.8.0;
 
 import "./extensions/IERC721.sol";
+import "./extensions/IERC721Metadata.sol";
 import "./extensions/IERC721Receiver.sol";
 import "./utils/Address.sol";
 import "./utils/Strings.sol";
 import "./ERC165.sol";
 
-contract ERC721 is ERC165, IERC721 {
+contract ERC721 is ERC165, IERC721, IERC721Metadata {
     using Address for address;
     using Strings for uint256;
 
@@ -51,15 +52,15 @@ contract ERC721 is ERC165, IERC721 {
         return owner;
     }
 
-    function name() public view virtual returns (string memory) {
+    function name() public view virtual override returns (string memory) {
         return _name;
     }
 
-    function symbol() public view virtual returns (string memory) {
+    function symbol() public view virtual override returns (string memory) {
         return _symbol;
     }
 
-    function tokenURI(uint256 tokenId) public view virtual returns (string memory) {
+    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
         _requireMinted(tokenId);
 
         string memory baseURI = _baseURI();

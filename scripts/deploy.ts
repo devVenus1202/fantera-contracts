@@ -1,19 +1,23 @@
-import { ethers } from "hardhat";
+import * as ethers from "ethers";
+import * as dotenv from "dotenv";
+import { expandDecimals, waitForTx } from "./helper";
 
-async function main() {
-  const [deployer] = await ethers.getSigners();
+dotenv.config();
 
-  console.log("Deploying contracts with the account:", deployer.address);
+async function main() {  
+  const provider = new ethers.providers.JsonRpcProvider(process.env.GOERLI_URL);
+  const wallet = new ethers.Wallet(process.env.PRIVATE_KEY || "", provider);
+  
+  const UtilityContract = require("../artifacts/contracts/FanteraToken.sol/FanteraToken.json");  
+  const CollectionContract = require("../artifacts/contracts/FanteraCollection.sol/FanteraCollection.json");  
 
-  console.log("Account balance:", (await deployer.getBalance()).toString());
+  const FanteraTokenfactory = new ethers.ContractFactory(UtilityContract.abi, UtilityContract.bytecode, wallet);
+  const token = await FanteraTokenfactory.deploy(0);
 
-  const UtilityToken = await ethers.getContractFactory("FanteraToken");
-  const token = await UtilityToken.deploy(0);
+  console.log("FanteraToken is deployed -> address: ", token.address);  
 
-  console.log("FanteraToken is deployed -> address: ", token.address);
-
-  const Collection = await ethers.getContractFactory("FanteraCollection");
-  const collection = await Collection.deploy(token.address);
+  const CollectionFactory = new ethers.ContractFactory(CollectionContract.abi, CollectionContract.bytecode, wallet);
+  const collection = await CollectionFactory.deploy(token.address);
 
   console.log("FanteraCollection is deployed -> address: ", collection.address);
 }
