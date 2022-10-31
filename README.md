@@ -2,25 +2,29 @@
 
 This is test contracts for Fantra
 
-## Command lines for deployment
+## Before starting
+Create `.env` file and fill the values from `.env.example`.
+
+## Deployment & Testing
+### Command lines for deployment
 ```
-yarn install
+yarn
 yarn compile
 yarn deploy-goerli
 ```
 
-## Test contracts
+### Test contracts
 
 ```
 yarn test
 ```
 
-## Mint ERC20 token
+### Mint ERC20 token
 
 ```
 npx ts-node scripts/mintERC20.ts
 ```
-## Mint ERC721 token
+### Mint ERC721 token
 
 ```
 npx ts-node scripts/mintERC721.ts
